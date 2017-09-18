@@ -1,0 +1,136 @@
+   .centre{
+        width: 70%;
+       /*margin-left: 30%;*/
+       margin: 0 auto;
+       margin-top: 5%;
+    }
+    .centr{
+        width: 100px;
+        margin: 0 auto;
+        /*background-color: red;*/
+ 
+    }
+    /*img{
+        width: auto;
+        margin: 0 auto;
+    }*/
+.ble{
+    background-color: lightblue;
+}
+.btn1{
+    width: 139px;
+    margin: 0 auto;
+    /*background-color: red;*/
+}
+
+.container{
+    /*border: 2px solid blue;*/
+    /*background-color: blue;*/
+}
+.mrgn{
+    margin-right: 2%;
+}
+.mrgnleft{
+    margin-left: 2%;
+}
+.nav-menu{
+    color: #abeae7; 
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    font-size: 100%;
+
+}
+.navbaar{
+    height: 25px;
+    /*vertical-align: middle;*/
+    background-color: #009688;
+    color: #abeae7;
+}
+.Profile{
+    background-color:#009688;
+    border-radius: 2%; 
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.down{
+    margin-top: 2%;
+}
+
+button{
+    background-color: #009688;
+    color: white;
+    text-decoration: none;
+
+
+}
+span{
+    margin-left: 2%;
+    font-size: 110%;
+    color: #abeae7; 
+
+}
+p{
+    margin-left: 2%;
+}
+.Dua_design{
+    background-color: #009688;
+    font-size: 100%;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1.5px solid #abeae7;  
+    padding-bottom: 2px;
+}
+
+.centre1{
+        width: 90%;
+       /*margin-left: 30%;*/
+       margin: 0 auto;
+       margin-top: 5%;
+    }
+    .commentbox{
+        /*padding: 0px;*/
+        /*padding-block-end: 2px;
+        
+    */
+    /*padding-top: -2px;*/
+    /*padding-bottom: -2px;*/
+    width: 90%;
+    border-radius: 20px;
+    margin: 2px;
+    }
+    #owner{
+        /*width: 100%;*/
+        margin-top: 5%;
+        color: #009688;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .indx{
+    position: absolute;
+
+   margin-left: 20px;
+
+    z-index: 1;
+    background-color: white;
+    color: black;
+    width: 70%;
+    animation: 2s animat ease-in ;
+
+    }
+
+
+    @keyframes animat{
+        25%{top: 0%;
+        }
+        50%{
+            top:5% 
+        }
+        75%{
+            top: 10%;
+        }
+        100%{
+            top: 15%;
+        }
+    }
