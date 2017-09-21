@@ -46,7 +46,7 @@ auth.createUserWithEmailAndPassword(user.email,user.password).catch(function(err
 
 }).then(function(usr){
     
-  database.child('AllUsers/'+usr.uid).push(user);
+  database.child('AllUsers/'+usr.UID).push(user);
 
  location='index.html';
 });

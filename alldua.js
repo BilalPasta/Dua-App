@@ -24,6 +24,7 @@ UserName.innerHTML=userobj.FirstName+' '+userobj.LastName;
 
 });
 //Post Render
+
 database.child('Post').on('child_added',function(snapshot){
 var obj=snapshot.val();
 obj.id=snapshot.key;
@@ -53,6 +54,10 @@ var Btn=document.createElement('BUTTON');
 Btn.onclick=function(){
 Commentsubmit(obj);
 }
+// var likebtn=document.createElement('BUTTON');
+// var liketxt=document.createTextNode('Like');
+// likebtn.appendChild(liketxt);
+// likebtn.setAttribute('class','btn btn-primary');
 var btntxt=document.createTextNode('Comment');
 
 Btn.setAttribute('class','btn');
@@ -66,11 +71,11 @@ para.appendChild(input);
 para.appendChild(Btn);
 div.appendChild(span);
 div.appendChild(para);
-
 div.setAttribute('class','Dua_design');
 var divlist=document.createElement('DIV');
 divlist.setAttribute('id','list');
 div.appendChild(divlist);
+
 Allposts.appendChild(div);
 
 });
@@ -81,7 +86,7 @@ function Commentsubmit(obj){
 var Comment={
   comment:commentinput.value,
   duaid:obj.id,
-  // user:CurrentUser.name,
+  user:uname,
   like:0
 };
 commentinput.value='';
@@ -137,11 +142,16 @@ database.child('Comment/'+obj.id).update(obj);
 database.child('Comment').on('child_changed',function(ob){
 obj=ob.val();
 document.getElementById(obj.id).innerHTML=obj.like;
-console.log( obj.id);
+// console.log( obj.id);
 });
+
 function Logout(){
-localStorage.removeItem('CurrentUser');
+  firebase.auth().signOut().then(function() {
+localStorage.removeItem('CurentUser');
 location.assign('index.html');
+}).catch(function(error) {
+});
+
 }
 
 function PostDelete(obj){
@@ -149,7 +159,7 @@ if(obj.UserId===CurrentUser){
 database.child('Post/'+obj.id).remove();
 }
 else{
- document.getElementById('Error').innerHTML=" <div class='alert  indx' role='alert'> <button type='button' class='close' data-dismiss='alert' >  <span aria-hidden='true'>&times;</span>  </button> <h4 class='alert-heading'>Error</h4> <hr>  <p class='mb-0'>Bilal</p></div>"  ;
+ document.getElementById('Error').innerHTML=" <div class='alert  indx' role='alert'> <button type='button' class='close' data-dismiss='alert' >  <span aria-hidden='true'>&times;</span>  </button> <h4 class='alert-heading'>Status</h4> <hr>  <p class='mb-0'>This Post is not Yours ,and you can't be able to Delete it.</p></div>"  ;
 }
 }
 

@@ -108,6 +108,7 @@ p{
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .indx{
+        
     position: absolute;
 
    margin-left: 20px;
@@ -116,21 +117,16 @@ p{
     background-color: white;
     color: black;
     width: 70%;
-    animation: 2s animat ease-in ;
+    animation: 2s animat linear ;
 
     }
 
 
     @keyframes animat{
-        25%{top: 0%;
-        }
-        50%{
-            top:5% 
-        }
-        75%{
-            top: 10%;
-        }
-        100%{
-            top: 15%;
-        }
+       from{
+top: 10%;
+       }
+       to{
+top:15%;
+       }
     }

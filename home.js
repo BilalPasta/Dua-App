@@ -38,21 +38,29 @@ function submitpost(){
 var post={
     Sender:sender.value,
     Dua:duatxt.value,
-    UserId:CurrentUser
+    UserId:CurrentUser,
+    
 };
 sender.value='';
 duatxt.value='';
+
 auth.onAuthStateChanged(function(user) {
   if (user) {
 database.child('Post').push(post);
+
+
   } else {
 
   }
 });
 }
 function Logout(){
-localStorage.removeItem('CurrentUser');
+  firebase.auth().signOut().then(function() {
+localStorage.removeItem('CurentUser');
 location.assign('index.html');
+}).catch(function(error) {
+});
+
 }
 
 
